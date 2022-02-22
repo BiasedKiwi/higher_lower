@@ -1,6 +1,6 @@
 use std::io;
 use rand::Rng;
-
+ 
 fn main() {
     let mut rng = rand::thread_rng();
     let to_guess: i8 = rng.gen_range(0..100); // generate the number to guess
