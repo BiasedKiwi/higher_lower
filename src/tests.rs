@@ -22,13 +22,13 @@ fn test_to_int_negative() {
 #[test]
 fn test_is_numeric() {
     let s = String::from("123");
-    assert_eq!(check_if_numeric(&s), true);
+    assert!(check_if_numeric(&s));
 }
 
 #[test]
 fn test_is_numeric_negative() {
     let s = String::from("-123");
-    assert_eq!(check_if_numeric(&s), true);
+    assert!(check_if_numeric(&s));
 }
 
 
