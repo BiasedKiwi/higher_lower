@@ -78,7 +78,7 @@ fn ask(first_time: bool) -> String {
 /// ```
 fn check_if_numeric(s: &String) -> bool {
     for c in s.chars() {  // Loop through all the chars in the String.
-        if c == "-" {
+        if c == '-' {  // Ignore negative symbol (-)
             continue;
         }
         else if !c.is_numeric() {
