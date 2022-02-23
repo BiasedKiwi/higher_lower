@@ -33,6 +33,10 @@ fn main() {
 // =======================
 
 /// Converts a String to a i32.
+/// 
+/// # Panics
+/// 
+/// Panics if 's' is contains non-numeric characters.
 ///
 /// # Examples
 ///
@@ -61,7 +65,7 @@ fn ask(first_time: bool) -> String {
 /// 
 /// # Panics
 /// 
-/// Panics if `s` contains non-numeric chars.
+/// Panics if `s` contains non-numeric characters.
 /// 
 /// # Examples
 /// 
