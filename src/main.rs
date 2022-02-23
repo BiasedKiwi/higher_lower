@@ -48,3 +48,6 @@ fn check_if_numeric(s: &String) -> bool { // check if all characters are numbers
     }
     return true;
 }
+
+#[cfg(test)]
+mod tests;
