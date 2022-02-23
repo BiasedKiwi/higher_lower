@@ -4,7 +4,7 @@ use rand::Rng;
 fn main() {
     let mut rng = rand::thread_rng();
     let to_guess: i8 = rng.gen_range(0..100); // generate the number to guess
-    println!("What's Up! I'm going to guess a number between 0 and 100 and you're going to have to guess it. Ok?");
+    println!("Hi! I'm going to guess a number between 0 and 100 and you're going to have to guess it. Ok?");
 
     let mut first_guess: bool = true;
     
