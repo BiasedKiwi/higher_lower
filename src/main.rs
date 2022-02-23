@@ -17,13 +17,29 @@ fn main() {
         first_guess = false;
         check_if_numeric(&guess);
         let guess: i8 = to_int(&guess).try_into().unwrap();
-        if guess == to_guess {
-            println!("You guessed it! The number was {}", to_guess);
-            break;
-        } else if guess > to_guess {
-            println!("Too high! Try again.");
-        } else {
-            println!("Too low! Try again.");
+
+        match guess {
+            g if g == to_guess => {
+                println!("You guessed it! The number was {}", to_guess);
+                break;
+            },
+            g if g > to_guess => {
+                if g > to_guess + 1 {
+                    println!("You're way too high!");
+                    continue;
+                }
+                println!("Too high! Try again.");
+            }
+            g if g < to_guess => {
+                if g < to_guess - 1 {
+                    println!("You're way too low!");
+                    continue;
+                }
+                println!("Too low! Try again.");
+            }
+            _ => {
+                println!("Invalid input. Try again.");
+            }
         }
     }
 }
@@ -31,6 +47,19 @@ fn main() {
 // =======================
 // == Utility Functions ==
 // =======================
+
+/// Ask the user for input.
+fn ask(first_time: bool) -> String {
+    let mut guess = String::new();
+
+    if first_time {
+        println!("Input the number I guessed below!");
+    }
+
+    io::stdin().read_line(&mut guess).expect("Error!"); // read input
+    guess.pop(); // Do this because for some reason Rust adds another character at the end of string (might be the escape character)
+    return guess;
+}
 
 /// Converts a String to a i32.
 /// 
@@ -46,19 +75,6 @@ fn main() {
 /// ```
 fn to_int(s: &String) -> i32 {
     s.parse().unwrap()
-}
-
-/// Ask the user for input.
-fn ask(first_time: bool) -> String {
-    let mut guess = String::new();
-
-    if first_time {
-        println!("Input the number I guessed below!");
-    }
-
-    io::stdin().read_line(&mut guess).expect("Error!"); // read input
-    guess.pop(); // Do this because for some reason Rust adds another character at the end of string (might be the escape character)
-    return guess;
 }
 
 /// Check if all characters provided are numbers, panic if not.
