@@ -24,14 +24,14 @@ fn main() {
                 break;
             },
             g if g > to_guess => {
-                if g > to_guess + 1 {
+                if g > to_guess + to_guess {
                     println!("You're way too high!");
                     continue;
                 }
                 println!("Too high! Try again.");
             }
             g if g < to_guess => {
-                if g < to_guess - 1 {
+                if g < to_guess - to_guess {
                     println!("You're way too low!");
                     continue;
                 }
