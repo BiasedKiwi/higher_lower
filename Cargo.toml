@@ -4,6 +4,7 @@ description = "A simple game I made to practice my Rust skills."
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
+repository = "https://github.com/shadawcraw/higher_lower"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
